@@ -5,8 +5,6 @@ import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
-import org.springframework.web.util.UriComponents;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 @Slf4j
@@ -15,6 +13,7 @@ public class reactiveController {
     final String GET_ALL = "getAll";
     final String GET_ONE = "getOne/{id}";
     final String POST = "add";
+    final String PUT = "update";
 
 
     private WebClient webClient;
@@ -53,7 +52,7 @@ public class reactiveController {
 
     }
 
-    public FlowerDTOReturn postOne(FlowerDTO flowerDTO){
+    public FlowerDTOReturn add(FlowerDTO flowerDTO){
         //http://localhost:9001/flower/add
         try{
             return webClient.post()
@@ -72,6 +71,27 @@ public class reactiveController {
 
     }
 
+
+    public FlowerDTOReturn update(FlowerDTO flowerDTO){
+        //http://localhost:9001/flower/update
+
+        try{
+            return webClient.put()
+                    .uri(PUT)
+                    .syncBody(flowerDTO)
+                    .retrieve()
+                    .bodyToMono(FlowerDTOReturn.class)
+                    .block();
+
+        }catch (WebClientResponseException wcre){
+            log.error("Error status '{}'",wcre.getStatusText());
+            throw wcre;
+        }catch (Exception ex){
+            log.error("Error thrown", ex);
+            throw ex;
+        }
+
+    }
 
 
 }

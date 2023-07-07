@@ -50,7 +50,7 @@ public class RestClientTest {
     @DisplayName("Check if a new element is post correctly")
     void testPostOne(){
         FlowerDTO flowerDTO = new FlowerDTO("Paris", "Francia");
-        FlowerDTOReturn dtoReturn = reactiveController.postOne(flowerDTO);
+        FlowerDTOReturn dtoReturn = reactiveController.add(flowerDTO);
         assertEquals(dtoReturn.getEurope(), "UE");
         Assertions.assertInstanceOf(FlowerDTOReturn.class, dtoReturn);
     }
@@ -61,10 +61,25 @@ public class RestClientTest {
         FlowerDTO flowerDTO = new FlowerDTO();
         Assertions.assertThrows(
                 WebClientResponseException.class,
-                () -> reactiveController.postOne(flowerDTO));
+                () -> reactiveController.add(flowerDTO));
 
     }
 
+
+    @Test
+    @DisplayName("Check the element has modified")
+    void testUpdate(){
+
+        int id = reactiveController.getAll().get(1).getId();
+        FlowerDTO expected = new FlowerDTO(id, "TestUpdate", "Italia");
+        FlowerDTOReturn returned = reactiveController.update(expected);
+
+        System.out.println(expected);
+        System.out.println(returned);
+        assertEquals(expected.getName(), returned.getName());
+        assertEquals(expected.getCountry(), returned.getCountry());
+
+    }
 
 
 
