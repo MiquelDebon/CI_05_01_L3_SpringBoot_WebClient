@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class FlowerDTO {
-    private int id;
+    private Integer id;
     private String name;
     private String country;
     private String europe;
@@ -20,7 +20,7 @@ public class FlowerDTO {
                 .map(String::toLowerCase)
                 .anyMatch(country.toLowerCase()::contains) ? "UE" : "Fora UE";
     }
-    public FlowerDTO(int id, String name, String country){
+    public FlowerDTO(Integer id, String name, String country){
         this.id = id;
         this.name = name;
         this.country = country;

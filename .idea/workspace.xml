@@ -6,32 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3983e447-61d3-4967-b9d1-2f81a431c197" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/.idea/S5_01_N1_WebCRUD.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/S5_01_N3_WebCRUD.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/S05T01N03DebonVillagrasaMiquelApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/reactiveController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/Flower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTOReturn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/UECountries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/resources/images/Asynchronous.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/S05T01N03DebonVillagrasaMiquelApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
@@ -53,6 +27,13 @@
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/model/service/IFlowerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/model/service/IFlowerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/test/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/S05T01N02DebonMiquelApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/test/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/S05T01N02DebonMiquelApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/reactiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/reactiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTOReturn.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTOReturn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +48,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -105,21 +86,8 @@
       <recent name="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RestClientTest.testGetAll">
-    <configuration name="S05T01N03DebonVillagrasaMiquelApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.S05T01N03DebonVillagrasaMiquelApplication" />
-      <module name="S05T01N03DebonVillagrasaMiquel" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RestClientTest.testGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.RestClientTest.testWrongPost">
+    <configuration name="RestClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S05T01N03DebonVillagrasaMiquel" />
       <extension name="coverage">
         <pattern>
@@ -129,7 +97,70 @@
       </extension>
       <option name="PACKAGE_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel" />
       <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.RestClientTest" />
-      <option name="METHOD_NAME" value="testGetAll" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestClientTest.testGetOneById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S05T01N03DebonVillagrasaMiquel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel" />
+      <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.RestClientTest" />
+      <option name="METHOD_NAME" value="testGetOneById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestClientTest.testGetOneById_InvalidID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S05T01N03DebonVillagrasaMiquel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel" />
+      <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.RestClientTest" />
+      <option name="METHOD_NAME" value="testGetOneById_InvalidID" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestClientTest.testPostOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S05T01N03DebonVillagrasaMiquel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel" />
+      <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.RestClientTest" />
+      <option name="METHOD_NAME" value="testPostOne" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestClientTest.testWrongPost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S05T01N03DebonVillagrasaMiquel" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel" />
+      <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.RestClientTest" />
+      <option name="METHOD_NAME" value="testWrongPost" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,8 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestClientTest.testGetAll" />
-        <item itemvalue="Application.S05T01N03DebonVillagrasaMiquelApplication" />
+        <item itemvalue="JUnit.RestClientTest.testWrongPost" />
+        <item itemvalue="JUnit.RestClientTest.testPostOne" />
+        <item itemvalue="JUnit.RestClientTest.testGetOneById" />
+        <item itemvalue="JUnit.RestClientTest" />
+        <item itemvalue="JUnit.RestClientTest.testGetOneById_InvalidID" />
       </list>
     </recent_temporary>
   </component>
