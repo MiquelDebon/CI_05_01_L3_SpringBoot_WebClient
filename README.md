@@ -16,6 +16,7 @@ The controlling class is able to attend to the following requests:
 Code With Dilip](https://www.youtube.com/watch?v=BSRW1HtNyCo&t=2153s)
 - [Video - Spring Boot Microservices Level 1: Communication and Discovery - Java Brains](https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas)
 - [Video - Spring Boot. API Rest. Programación reactiva. WebFlux. Introducción](https://www.youtube.com/watch?v=i0lJZeLdAi8&t=910s)
+- [Video - Calling REST from Java with Spring WebClient](https://www.youtube.com/watch?v=-U_dDUAw_OM)
 
     This video showed the importance of a reactive code vs Synchronous.
 

@@ -1,39 +1,41 @@
 package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel;
 
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.controller.reactiveController;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.PATH;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.ServiceRestClient;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RestClientTest {
-    final String BASE_URL = "http://localhost:9001/flower/";
 
-    private WebClient webClient = WebClient.create(BASE_URL);
-    private reactiveController reactiveController = new reactiveController(webClient);
+    private WebClient webClient = WebClient.create(PATH.BASE_URL);
+    private ServiceRestClient apiService = new ServiceRestClient(webClient);
 
 
-    //TODO: ERROR Test Junit5
     @Test
     @DisplayName("Check there are elements in the List")
     void testGetAll(){
-        List<FlowerDTO> list = reactiveController.getAll();
+        List<FlowerDTO> list = apiService.getAll();
         System.out.println(list);
         assertTrue(list.size() > 0);
+        assertNotNull(list);
     }
+
 
     @Test
     @DisplayName("Check the API retrieve a valid element")
     void testGetOneById(){
         //There should be existing elements
-        int id = reactiveController.getAll().get(1).getId();
-        FlowerDTO flowerDTO = reactiveController.getOne(id);
+        int id = apiService.getAll().get(1).getId();
+        FlowerDTO flowerDTO = apiService.getOne(id);
         System.err.println(flowerDTO);
         Assertions.assertInstanceOf(FlowerDTO.class, flowerDTO);
     }
@@ -43,7 +45,7 @@ public class RestClientTest {
     void testGetOneById_InvalidID(){
         Assertions.assertThrows(
                 WebClientResponseException.class,
-                () -> reactiveController.getOne(-1) );
+                () -> apiService.getOne(-1) );
     }
 
 
@@ -51,7 +53,7 @@ public class RestClientTest {
     @DisplayName("Check if a new element is post correctly")
     void testPostOne(){
         FlowerDTO flowerDTO = new FlowerDTO("Paris", "Francia");
-        FlowerDTOReturn dtoReturn = reactiveController.add(flowerDTO);
+        FlowerDTOReturn dtoReturn = apiService.add(flowerDTO);
         assertEquals(dtoReturn.getEurope(), "UE");
         Assertions.assertInstanceOf(FlowerDTOReturn.class, dtoReturn);
     }
@@ -62,7 +64,7 @@ public class RestClientTest {
         FlowerDTO flowerDTO = new FlowerDTO();
         Assertions.assertThrows(
                 WebClientResponseException.class,
-                () -> reactiveController.add(flowerDTO));
+                () -> apiService.add(flowerDTO));
 
     }
 
@@ -71,9 +73,9 @@ public class RestClientTest {
     @DisplayName("Check the element has modified")
     void testUpdate(){
 
-        int id = reactiveController.getAll().get(1).getId();
+        int id = apiService.getAll().get(1).getId();
         FlowerDTO expected = new FlowerDTO(id, "TestUpdate", "Italia");
-        FlowerDTOReturn returned = reactiveController.update(expected);
+        FlowerDTOReturn returned = apiService.update(expected);
 
         System.out.println(expected);
         System.out.println(returned);
@@ -86,16 +88,19 @@ public class RestClientTest {
     @DisplayName("Check to delete an element")
     void testDelete(){
         FlowerDTO newflowerDTO = new FlowerDTO(null, "DeleteTest", "Country");
-        reactiveController.add(newflowerDTO);
+        apiService.add(newflowerDTO);
 
-        int id = reactiveController.getAll().size();
+        int id = apiService.getAll().size();
             System.err.println("Size list before: " + id);
-        reactiveController.delete(id);
-            System.err.println("Size list after: " + reactiveController.getAll().size());
+        int deleteID = apiService.getAll().get(--id).getId();
+        apiService.delete(deleteID);
+            System.err.println("Size list after: " + apiService.getAll().size());
 
         Assertions.assertThrows(
                 WebClientResponseException.class,
-                () -> reactiveController.getOne(id));
+                () -> apiService.getOne(deleteID));
     }
+
+
 
 }

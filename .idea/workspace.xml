@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3983e447-61d3-4967-b9d1-2f81a431c197" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/.idea/S5_01_N1_WebCRUD.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/services/PATH.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/services/ServiceRestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
@@ -30,8 +31,9 @@
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/test/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/S05T01N02DebonMiquelApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/test/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/S05T01N02DebonMiquelApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/reactiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/reactiveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/reactiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/ControllerRestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +90,7 @@
       <recent name="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RestClientTest.testDelete">
+  <component name="RunManager" selected="JUnit.RestClientTest">
     <configuration name="S05T01N03DebonVillagrasaMiquelApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.S05T01N03DebonVillagrasaMiquelApplication" />
       <module name="S05T01N03DebonVillagrasaMiquel" />
@@ -167,10 +169,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RestClientTest" />
         <item itemvalue="JUnit.RestClientTest.testDelete" />
         <item itemvalue="Application.S05T01N03DebonVillagrasaMiquelApplication" />
         <item itemvalue="JUnit.RestClientTest.testGetOneById" />
-        <item itemvalue="JUnit.RestClientTest" />
         <item itemvalue="JUnit.RestClientTest.testGetAll" />
       </list>
     </recent_temporary>

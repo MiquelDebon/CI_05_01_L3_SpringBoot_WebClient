@@ -1,5 +1,6 @@
 package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel;
 
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.PATH;
 import io.netty.channel.ChannelOption;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,22 +14,16 @@ import java.time.Duration;
 
 @Configuration
 public class AppConfig {
-//    @Bean
-//    WebClient webClient (WebClient.Builder webClient){
-//        return webClient.build();
-//    }
 
     @Bean
     public WebClient webClient() {
 
-        HttpClient httpClient = HttpClient.create()
-                .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 10000)
-                .responseTimeout(Duration.ofSeconds(10));
-
-        return WebClient.builder().baseUrl("http://localhost:9001/flower/")
+        HttpClient httpClient = HttpClient.create();
+        return WebClient.builder().baseUrl(PATH.BASE_URL)
                 .clientConnector(new ReactorClientHttpConnector(httpClient))
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }
+
 }
 
