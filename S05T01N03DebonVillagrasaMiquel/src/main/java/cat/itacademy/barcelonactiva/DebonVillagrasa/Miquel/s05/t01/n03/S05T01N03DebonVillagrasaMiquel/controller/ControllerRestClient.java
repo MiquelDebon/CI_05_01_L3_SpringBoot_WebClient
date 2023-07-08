@@ -1,9 +1,15 @@
 package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.controller;
 
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.ServiceRestClient;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +22,9 @@ public class ControllerRestClient {
     @Autowired
     private ServiceRestClient serviceRC;
 
+    //http://localhost:9002/swagger-ui/index.html
+
+
     //http://localhost:9002/flor/clientFlorsAdd
     //http://localhost:9002/flor/clientFlorsUpdate
     //http://localhost:9002/flor/clientFlorsDelete/{id}
@@ -23,12 +32,29 @@ public class ControllerRestClient {
     //http://localhost:9002/flor/clientFlorsAll
 
 
+    @Operation(
+            tags = "IT-Academy",
+            summary = "Get ALL Flower DTO",
+            description = "This method retrieve all the Flower Collection",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Successful updated",
+                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                                    mediaType = MediaType.APPLICATION_JSON_VALUE)
+
+                    ),
+                    @ApiResponse(
+                            responseCode = "400",
+                            content = @Content
+                    )
+            }
+    )
     @GetMapping("/clientFlorsAll")
     public ResponseEntity<?> getAll(){
         //http://localhost:9002/flor/clientFlorsAll
         //http://localhost:9001/flower/getAll
         List<FlowerDTO> list = serviceRC.getAll();
-        System.err.println(list);
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
