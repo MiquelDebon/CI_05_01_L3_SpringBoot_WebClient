@@ -1,5 +1,14 @@
 ## SpringBoot - WebClient
 
+
+
+The controlling class is able to attend to the following requests:
+- http://localhost:9002/flor/clientFlorsAdd
+- http://localhost:9002/flor/clientFlorsUpdate
+- http://localhost:9002/flor/clientFlorsDelete/{id}
+- http://localhost:9002/flor/clientFlorsGetOne/{id}
+- http://localhost:9002/flor/clientFlorsAll
+
 ### References 
 - [Spring 5 WebClient](https://www.baeldung.com/spring-5-webclient)
 - [Spring WebClient vs. RestTemplate](https://www.baeldung.com/spring-webclient-resttemplate)

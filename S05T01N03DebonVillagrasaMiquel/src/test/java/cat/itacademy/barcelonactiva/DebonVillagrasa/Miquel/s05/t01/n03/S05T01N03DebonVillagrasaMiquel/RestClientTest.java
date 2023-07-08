@@ -34,6 +34,7 @@ public class RestClientTest {
         //There should be existing elements
         int id = reactiveController.getAll().get(1).getId();
         FlowerDTO flowerDTO = reactiveController.getOne(id);
+        System.err.println(flowerDTO);
         Assertions.assertInstanceOf(FlowerDTO.class, flowerDTO);
     }
 
@@ -81,6 +82,20 @@ public class RestClientTest {
 
     }
 
+    @Test
+    @DisplayName("Check to delete an element")
+    void testDelete(){
+        FlowerDTO newflowerDTO = new FlowerDTO(null, "DeleteTest", "Country");
+        reactiveController.add(newflowerDTO);
 
+        int id = reactiveController.getAll().size();
+            System.err.println("Size list before: " + id);
+        reactiveController.delete(id);
+            System.err.println("Size list after: " + reactiveController.getAll().size());
+
+        Assertions.assertThrows(
+                WebClientResponseException.class,
+                () -> reactiveController.getOne(id));
+    }
 
 }
