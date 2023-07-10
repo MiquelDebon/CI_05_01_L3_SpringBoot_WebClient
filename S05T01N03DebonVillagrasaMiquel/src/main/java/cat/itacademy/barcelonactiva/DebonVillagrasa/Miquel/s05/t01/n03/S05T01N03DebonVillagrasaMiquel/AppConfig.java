@@ -8,6 +8,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
+import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.netty.http.client.HttpClient;
 
 
@@ -29,5 +32,16 @@ public class AppConfig {
     }
 
 
+    private static final String PATH_BASE = "flowers";
+    @Bean
+    RouterFunction<ServerResponse> router (FlowerHandler handler){
+        return RouterFunctions.route()
+                .GET(PATH_BASE, handler::getAll)
+                .GET(PATH_BASE + "/{id}", handler::getOne)
+                .POST(PATH_BASE, handler::add)
+                .PUT(PATH_BASE, handler::update)
+                .DELETE(PATH_BASE, handler::delete)
+                .build();
+    }
 }
 
