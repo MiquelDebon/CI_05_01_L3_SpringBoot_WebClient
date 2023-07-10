@@ -2,25 +2,27 @@ package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N0
 
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+import reactor.core.publisher.Flux;
 
+import java.time.Duration;
 import java.util.List;
 
 @Service
 @Slf4j
-public class ServiceRestClient {
+@AllArgsConstructor
+public class FlowerServiceSynchronous implements  IServiceSynchronous{
 
-    @Autowired
     private WebClient webClient;
 
-    public ServiceRestClient(WebClient webClient){
-        this.webClient = webClient;
-    }
-
+    /**
+     * Traditional
+     */
+    @Override
     public List<FlowerDTO> getAll(){
         //http://localhost:9002/flor/clientFlorsAll
         //http://localhost:9001/flower/getAll
@@ -34,6 +36,7 @@ public class ServiceRestClient {
         return list;
     }
 
+    @Override
     public FlowerDTO getOne(Integer flowerID){
         //http://localhost:9002/flor/clientFlorsGetOne/18
         //http://localhost:9001/flower/getOne/{id}
@@ -52,6 +55,7 @@ public class ServiceRestClient {
         }
     }
 
+    @Override
     public FlowerDTOReturn add(FlowerDTO flowerDTO){
         //http://localhost:9001/flower/clientFlorsAdd
         try{
@@ -70,7 +74,7 @@ public class ServiceRestClient {
         }
     }
 
-
+    @Override
     public FlowerDTOReturn update(FlowerDTO flowerDTO){
         //http://localhost:9001/flower/update
 
@@ -91,6 +95,7 @@ public class ServiceRestClient {
         }
     }
 
+    @Override
     public FlowerDTOReturn delete(Integer id){
         try{
             FlowerDTOReturn deletedElement =

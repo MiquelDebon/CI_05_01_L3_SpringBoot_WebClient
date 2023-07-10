@@ -3,12 +3,13 @@ package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N0
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.PATH;
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.ServiceRestClient;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.FlowerServiceSynchronous;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+import reactor.core.publisher.Mono;
 
 import java.util.List;
 
@@ -17,7 +18,18 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RestClientTest {
 
     private WebClient webClient = WebClient.create(PATH.BASE_URL);
-    private ServiceRestClient apiService = new ServiceRestClient(webClient);
+    private FlowerServiceSynchronous apiService = new FlowerServiceSynchronous(webClient);
+
+    @Test
+    public void testMono(){
+        Mono<String> stringMono = Mono.just("HolaString").log();
+        System.out.println(stringMono);
+        System.out.println(stringMono.subscribe());
+        System.out.println(stringMono.block());
+        stringMono.subscribe(System.out::println); //The right way
+    }
+
+
 
 
     @Test

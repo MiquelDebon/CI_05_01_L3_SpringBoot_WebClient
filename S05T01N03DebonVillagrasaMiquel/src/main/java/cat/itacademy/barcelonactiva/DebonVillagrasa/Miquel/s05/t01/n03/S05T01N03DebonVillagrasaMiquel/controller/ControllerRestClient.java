@@ -2,7 +2,8 @@ package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N0
 
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.ServiceRestClient;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.FlowerServiceAsynchronous;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.FlowerServiceSynchronous;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 
 import java.util.List;
 
@@ -20,7 +22,9 @@ import java.util.List;
 public class ControllerRestClient {
 
     @Autowired
-    private ServiceRestClient serviceRC;
+    private FlowerServiceSynchronous serviceRC;
+    @Autowired
+    private FlowerServiceAsynchronous serviceRC_Reactive;
 
     //http://localhost:9002/swagger-ui/index.html
 
@@ -31,11 +35,37 @@ public class ControllerRestClient {
     //http://localhost:9002/flor/clientFlorsGetOne/{id}
     //http://localhost:9002/flor/clientFlorsAll
 
+    @Operation(
+            tags = "Asynchronous Reactive API",
+            summary = "Get ALL Flower DTO",
+            description = "This method retrieve all the Flower Collection, but " +
+                    "YOU CAN STOP WHENEVER YOU WANT THE EXECUTION",
+            responses = {
+                    @ApiResponse(
+                            responseCode = "200",
+                            description = "Successful updated",
+                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                                    mediaType = MediaType.APPLICATION_JSON_VALUE)
+
+                    ),
+                    @ApiResponse(
+                            responseCode = "400",
+                            content = @Content
+                    )
+            }
+    )
+    @GetMapping(value = "/clientFlorsAll/reactive", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    //http://localhost:9002/flor/clientFlorsAll/reactive
+    public Flux<FlowerDTO> getAllReactive(){
+        return serviceRC_Reactive.getAllReactive();
+    }
+
 
     @Operation(
-            tags = "IT-Academy",
+            tags = "Traditional Synchronous API",
             summary = "Get ALL Flower DTO",
-            description = "This method retrieve all the Flower Collection",
+            description = "This method retrieve all the Flower Collection, but " +
+                    "YOU CAN NOT STOP THE EXERCUTIION OF QUERY",
             responses = {
                     @ApiResponse(
                             responseCode = "200",
@@ -57,6 +87,7 @@ public class ControllerRestClient {
         List<FlowerDTO> list = serviceRC.getAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
+
 
 
     @GetMapping("/clientFlorsGetOne/{id}")
