@@ -46,7 +46,7 @@ public class RestClientTest {
     @DisplayName("Check the API retrieve a valid element")
     void testGetOneById(){
         //There should be existing elements
-        int id = apiService.getAll().get(1).getId();
+        int id = apiService.getAll().get(0).getId();
         FlowerDTO flowerDTO = apiService.getOne(id);
         System.err.println(flowerDTO);
         Assertions.assertInstanceOf(FlowerDTO.class, flowerDTO);
@@ -68,6 +68,10 @@ public class RestClientTest {
         FlowerDTOReturn dtoReturn = apiService.add(flowerDTO);
         assertEquals(dtoReturn.getEurope(), "UE");
         Assertions.assertInstanceOf(FlowerDTOReturn.class, dtoReturn);
+
+        int size = apiService.getAll().size();
+        int idd = apiService.getAll().get(--size).getId();
+        apiService.delete(idd);;
     }
 
     @Test
@@ -93,6 +97,10 @@ public class RestClientTest {
         System.out.println(returned);
         assertEquals(expected.getName(), returned.getName());
         assertEquals(expected.getCountry(), returned.getCountry());
+
+        int size = apiService.getAll().size();
+        int idd = apiService.getAll().get(--size).getId();
+        apiService.delete(idd);
 
     }
 

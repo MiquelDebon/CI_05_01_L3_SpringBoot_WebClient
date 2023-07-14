@@ -9,6 +9,9 @@ The controlling class is able to attend to the following requests:
 - http://localhost:9002/flor/clientFlorsGetOne/{id}
 - http://localhost:9002/flor/clientFlorsAll
 
+Reactive EndPoint by @Controller
+- http://localhost:9002/flor/clientFlorsAll/reactive
+
 ### References 
 - [Spring 5 WebClient](https://www.baeldung.com/spring-5-webclient)
 - [Spring WebClient vs. RestTemplate](https://www.baeldung.com/spring-webclient-resttemplate)
