@@ -1,9 +1,11 @@
 package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services;
 
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.exception.NoSuchElement;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -28,27 +30,25 @@ public class FlowerServiceAsynchronous implements  IServiceAsynchronous{
     @Override
     public Flux<FlowerDTO> getAllReactive(){
         return webClient
-                .get().uri(PATH.GET_ALL)
-                .retrieve()
-                .bodyToFlux(FlowerDTO.class)
-                .delayElements(Duration.ofSeconds(1))
-                .doOnNext(f -> System.out.println(f.getId() + "_" + f));
-    }
+            .get().uri(PATH.GET_ALL)
+            .retrieve()
+            .bodyToFlux(FlowerDTO.class)
+            .delayElements(Duration.ofSeconds(1))
+            .doOnError((throwable) -> {
+                throw new NoSuchElement("Error");
+            });
+
+  }
 
     @Override
     public Mono<FlowerDTO> getOneReactive(Integer id) {
-        try{
-            return webClient.get().uri(PATH.GET_ONE, id)
-                    .retrieve()
-                    .bodyToMono(FlowerDTO.class);
+        return webClient.get().uri(PATH.GET_ONE, id)
+                .retrieve()
+                .bodyToMono(FlowerDTO.class)
+                .doOnError((throwable) -> {
+                    throw new NoSuchElement("Any element with this ID");
+                });
 
-        }catch (WebClientResponseException wcre){
-            log.error("Error status '{}'",wcre.getStatusText());
-            throw wcre;
-        }catch (Exception ex){
-            log.error("Error thrown", ex);
-            throw ex;
-        }
     }
 
     @Override
@@ -68,6 +68,7 @@ public class FlowerServiceAsynchronous implements  IServiceAsynchronous{
         }
     }
 
+
     @Override
     public Mono<FlowerDTOReturn> updateReactive(FlowerDTO flowerDTO) {
         try{
@@ -76,7 +77,6 @@ public class FlowerServiceAsynchronous implements  IServiceAsynchronous{
                     .syncBody(flowerDTO)
                     .retrieve()
                     .bodyToMono(FlowerDTOReturn.class);
-
         }catch (WebClientResponseException wcre){
             log.error("Error status '{}'",wcre.getStatusText());
             throw wcre;
@@ -104,4 +104,6 @@ public class FlowerServiceAsynchronous implements  IServiceAsynchronous{
             throw ex;
         }
     }
+
+
 }

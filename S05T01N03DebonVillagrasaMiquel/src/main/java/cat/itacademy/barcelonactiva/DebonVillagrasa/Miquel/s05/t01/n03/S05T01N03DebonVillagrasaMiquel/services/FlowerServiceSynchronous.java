@@ -4,6 +4,7 @@ import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03
 import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
@@ -14,10 +15,14 @@ import java.util.List;
 
 @Service
 @Slf4j
-@AllArgsConstructor
 public class FlowerServiceSynchronous implements  IServiceSynchronous{
 
     private WebClient webClient;
+
+    @Autowired
+    public FlowerServiceSynchronous(WebClient webClient) {
+        this.webClient = webClient;
+    }
 
     /**
      * Traditional
@@ -27,7 +32,8 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
         //http://localhost:9002/flor/clientFlorsAll
         //http://localhost:9001/flower/getAll
 
-        List<FlowerDTO> list = webClient.get().uri(PATH.GET_ALL)
+        List<FlowerDTO> list = webClient
+                .get().uri(PATH.GET_ALL)
                 .retrieve()
                 .bodyToFlux(FlowerDTO.class)
                 .collectList() //Mono<List<Flower>>

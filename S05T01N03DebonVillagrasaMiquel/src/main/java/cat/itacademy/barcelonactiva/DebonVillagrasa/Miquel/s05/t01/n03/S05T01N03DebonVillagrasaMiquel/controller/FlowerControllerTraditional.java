@@ -21,8 +21,12 @@ import java.util.List;
 @RequestMapping("/flor")
 public class FlowerControllerTraditional {
 
-    @Autowired
     private FlowerServiceSynchronous serviceRC;
+
+    @Autowired
+    public FlowerControllerTraditional(FlowerServiceSynchronous serviceRC) {
+        this.serviceRC = serviceRC;
+    }
 
     //http://localhost:9002/swagger-ui/index.html
 

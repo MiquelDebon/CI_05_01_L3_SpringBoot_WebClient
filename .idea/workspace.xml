@@ -11,9 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3983e447-61d3-4967-b9d1-2f81a431c197" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/.idea/S5_01_N1_WebCRUD.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/FlowerControllerReactive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/model/FlowerDTOSchemaUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/router/Routerflower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/exception/ApiExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/exception/MessageException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/exception/NoSuchElement.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../S5_WebClient/.idea/S5_WebClient.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../S5_WebClient/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../S5_WebClient/.idea/encodings.xml" afterDir="false" />
@@ -32,9 +32,12 @@
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/controller/SucursalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/controller/SucursalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/repository/SucursalReposotory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/repository/ISucursalReposotory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/services/ISucursalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/services/ISucursalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/services/SucursalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/services/SucursalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/domainEntity/Sucursal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/dto/SucursalDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/dto/UECountries.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/repository/SucursalReposotory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/services/ISucursalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/java/cat/itacademy/barcelonactiva/VillgrasaDebon/Miquel/s05/t01/n01/S05T01N01DebonMiquel/model/services/SucursalServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/resources/templates/template/plantilla.html" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N1_WebCRUD/S05T01N01DebonMiquel/src/main/resources/templates/template/plantilla.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/.idea/vcs.xml" afterDir="false" />
@@ -49,14 +52,14 @@
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/test/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/S05T01N02DebonMiquelApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../S5_01_N2_WebCRUD/S05T01N02DebonMiquel/src/test/java/cat/itacademy/barcelonactiva/Debon/Miquel/s05/t01/n02/S05T01N02DebonMiquel/S05T01N02DebonMiquelApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/ControllerRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/FlowerControllerTraditional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/handler/FlowerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/handler/FlowerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/FlowerControllerReactive.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/FlowerControllerReactive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/FlowerControllerTraditional.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/controller/FlowerControllerTraditional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/handler/FlowerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/router/FlowerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/router/Routerflower.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/router/Routerflower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/services/FlowerServiceAsynchronous.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/services/FlowerServiceAsynchronous.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/services/FlowerServiceSynchronous.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/services/FlowerServiceSynchronous.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTest2.java" beforeDir="false" afterPath="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/RestClientTestReactive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +110,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/S05T01N03DebonVillagrasaMiquel/src/test/java/cat/itacademy/barcelonactiva/DebonVillagrasa/Miquel/s05/t01/n03/S05T01N03DebonVillagrasaMiquel/postman" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel" />
     </key>
@@ -117,7 +123,7 @@
       <recent name="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RestClientTestReactive">
+  <component name="RunManager" selected="Application.S05T01N03DebonVillagrasaMiquelApplication">
     <configuration name="S05T01N03DebonVillagrasaMiquelApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.S05T01N03DebonVillagrasaMiquelApplication" />
       <module name="S05T01N03DebonVillagrasaMiquel" />
@@ -195,9 +201,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestClientTestReactive" />
-        <item itemvalue="JUnit.RestClientTest" />
         <item itemvalue="Application.S05T01N03DebonVillagrasaMiquelApplication" />
+        <item itemvalue="JUnit.RestClientTest" />
+        <item itemvalue="JUnit.RestClientTestReactive" />
         <item itemvalue="JUnit.RestClientTestReactive.testGetOneById" />
         <item itemvalue="JUnit.RestClientTestReactive.testGetAll" />
       </list>
@@ -213,5 +219,10 @@
       <updated>1688487116791</updated>
     </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/S5_01_N3_WebCRUD$RestClientTestReactive.ic" NAME="RestClientTestReactive Coverage Results" MODIFIED="1689418345280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.*</FILTER>
+    </SUITE>
   </component>
 </project>
