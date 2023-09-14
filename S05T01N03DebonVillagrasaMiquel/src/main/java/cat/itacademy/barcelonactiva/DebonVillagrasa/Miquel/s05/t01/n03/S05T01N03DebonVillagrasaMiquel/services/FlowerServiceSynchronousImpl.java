@@ -1,26 +1,24 @@
 package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services;
 
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
-import lombok.AllArgsConstructor;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDto;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDtoRequest;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDtoReturn;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
-import reactor.core.publisher.Flux;
 
-import java.time.Duration;
 import java.util.List;
 
 @Service
 @Slf4j
-public class FlowerServiceSynchronous implements  IServiceSynchronous{
+public class FlowerServiceSynchronousImpl implements IFlowerServiceSynchronous {
 
     private WebClient webClient;
 
     @Autowired
-    public FlowerServiceSynchronous(WebClient webClient) {
+    public FlowerServiceSynchronousImpl(WebClient webClient) {
         this.webClient = webClient;
     }
 
@@ -28,14 +26,14 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
      * Traditional
      */
     @Override
-    public List<FlowerDTO> getAll(){
+    public List<FlowerDto> getAll(){
         //http://localhost:9002/flor/clientFlorsAll
         //http://localhost:9001/flower/getAll
 
-        List<FlowerDTO> list = webClient
+        List<FlowerDto> list = webClient
                 .get().uri(PATH.GET_ALL)
                 .retrieve()
-                .bodyToFlux(FlowerDTO.class)
+                .bodyToFlux(FlowerDto.class)
                 .collectList() //Mono<List<Flower>>
                 .block();   //To Synchronous  List<Flower>
         System.out.println(list);
@@ -43,13 +41,13 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
     }
 
     @Override
-    public FlowerDTO getOne(Integer flowerID){
+    public FlowerDto getOne(Integer flowerID){
         //http://localhost:9002/flor/clientFlorsGetOne/18
         //http://localhost:9001/flower/getOne/{id}
         try{
             return webClient.get().uri(PATH.GET_ONE, flowerID)
                     .retrieve()
-                    .bodyToMono(FlowerDTO.class)
+                    .bodyToMono(FlowerDto.class)
                     .block();
 
         }catch (WebClientResponseException wcre){
@@ -62,14 +60,14 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
     }
 
     @Override
-    public FlowerDTOReturn add(FlowerDTO flowerDTO){
+    public FlowerDtoReturn add(FlowerDtoRequest flowerDTO){
         //http://localhost:9001/flower/clientFlorsAdd
         try{
             return webClient.post()
                     .uri(PATH.POST)
                     .syncBody(flowerDTO)
                     .retrieve()
-                    .bodyToMono(FlowerDTOReturn.class)
+                    .bodyToMono(FlowerDtoReturn.class)
                     .block();
         }catch (WebClientResponseException wcre){
             log.error("Error status '{}'",wcre.getStatusText());
@@ -81,7 +79,7 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
     }
 
     @Override
-    public FlowerDTOReturn update(FlowerDTO flowerDTO){
+    public FlowerDtoReturn update(FlowerDto flowerDTO){
         //http://localhost:9001/flower/update
 
         try{
@@ -89,7 +87,7 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
                     .uri(PATH.PUT)
                     .syncBody(flowerDTO)
                     .retrieve()
-                    .bodyToMono(FlowerDTOReturn.class)
+                    .bodyToMono(FlowerDtoReturn.class)
                     .block();
 
         }catch (WebClientResponseException wcre){
@@ -102,13 +100,13 @@ public class FlowerServiceSynchronous implements  IServiceSynchronous{
     }
 
     @Override
-    public FlowerDTOReturn delete(Integer id){
+    public FlowerDtoReturn delete(Integer id){
         try{
-            FlowerDTOReturn deletedElement =
+            FlowerDtoReturn deletedElement =
                     webClient.delete()
                             .uri(PATH.DELETE, id)
                             .retrieve()
-                            .bodyToMono(FlowerDTOReturn.class)
+                            .bodyToMono(FlowerDtoReturn.class)
                             .block();
 
             return deletedElement;

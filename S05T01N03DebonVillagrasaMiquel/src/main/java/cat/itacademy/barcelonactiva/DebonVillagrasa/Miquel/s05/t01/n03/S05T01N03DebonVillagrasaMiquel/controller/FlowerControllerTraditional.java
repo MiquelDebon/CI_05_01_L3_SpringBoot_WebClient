@@ -1,14 +1,17 @@
 package cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.controller;
 
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTO;
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOReturn;
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.FlowerDTOSchemaUpdate;
-import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.FlowerServiceSynchronous;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDto;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDtoRequest;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDtoReturn;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.model.DTO.FlowerDtoSchemaUpdate;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.FlowerServiceSynchronousImpl;
+import cat.itacademy.barcelonactiva.DebonVillagrasa.Miquel.s05.t01.n03.S05T01N03DebonVillagrasaMiquel.services.IFlowerServiceSynchronous;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,10 +24,10 @@ import java.util.List;
 @RequestMapping("/flor")
 public class FlowerControllerTraditional {
 
-    private FlowerServiceSynchronous serviceRC;
+    private IFlowerServiceSynchronous serviceRC;
 
     @Autowired
-    public FlowerControllerTraditional(FlowerServiceSynchronous serviceRC) {
+    public FlowerControllerTraditional(FlowerServiceSynchronousImpl serviceRC) {
         this.serviceRC = serviceRC;
     }
 
@@ -45,7 +48,7 @@ public class FlowerControllerTraditional {
                     @ApiResponse(
                             responseCode = "200",
                             description = "Successful updated",
-                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                            content = @Content(schema = @Schema(implementation = FlowerDtoReturn.class),
                                     mediaType = MediaType.APPLICATION_JSON_VALUE)
 
                     ),
@@ -59,7 +62,7 @@ public class FlowerControllerTraditional {
     public ResponseEntity<?> getAll(){
         //http://localhost:9002/flor/clientFlorsAll
         //http://localhost:9001/flower/getAll
-        List<FlowerDTO> list = serviceRC.getAll();
+        List<FlowerDto> list = serviceRC.getAll();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
@@ -74,7 +77,7 @@ public class FlowerControllerTraditional {
                     @ApiResponse(
                             responseCode = "200",
                             description = "Successful updated",
-                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                            content = @Content(schema = @Schema(implementation = FlowerDtoReturn.class),
                                     mediaType = MediaType.APPLICATION_JSON_VALUE)
 
                     ),
@@ -102,13 +105,13 @@ public class FlowerControllerTraditional {
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     required = true,
                     description = "Expected a Flower JSON",
-                    content = @Content(schema = @Schema(implementation = FlowerDTO.class))),
+                    content = @Content(schema = @Schema(implementation = FlowerDto.class))),
 
             responses = {
                     @ApiResponse(
                             responseCode = "200",
                             description = "Successful response",
-                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                            content = @Content(schema = @Schema(implementation = FlowerDtoReturn.class),
                                     mediaType = MediaType.APPLICATION_JSON_VALUE)
                     ),
                     @ApiResponse(
@@ -119,9 +122,9 @@ public class FlowerControllerTraditional {
             }
     )
     @PostMapping("/clientFlorsAdd")
-    public ResponseEntity<?> add(@RequestBody FlowerDTO flowerDTO){
+    public ResponseEntity<?> add(@RequestBody @Valid FlowerDtoRequest flowerDTORequest){
         try{
-            return new ResponseEntity<>(serviceRC.add(flowerDTO), HttpStatus.OK);
+            return new ResponseEntity<>(serviceRC.add(flowerDTORequest), HttpStatus.OK);
         }catch (RuntimeException e){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -134,13 +137,13 @@ public class FlowerControllerTraditional {
             requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(
                     required = true,
                     description = "Expected a Flower JSON",
-                    content = @Content(schema = @Schema(implementation = FlowerDTOSchemaUpdate.class))
+                    content = @Content(schema = @Schema(implementation = FlowerDtoSchemaUpdate.class))
             ),
             responses = {
                     @ApiResponse(
                             responseCode = "200",
                             description = "Successful updated",
-                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                            content = @Content(schema = @Schema(implementation = FlowerDtoReturn.class),
                                     mediaType = MediaType.APPLICATION_JSON_VALUE)
 
                     ),
@@ -152,7 +155,7 @@ public class FlowerControllerTraditional {
 
     )
     @PutMapping("/clientFlorsUpdate")
-    public ResponseEntity<?> update(@RequestBody FlowerDTO flowerDTO){
+    public ResponseEntity<?> update(@RequestBody FlowerDto flowerDTO){
         try {
             return new ResponseEntity<>(serviceRC.update(flowerDTO), HttpStatus.OK);
         }catch (RuntimeException e){
@@ -168,7 +171,7 @@ public class FlowerControllerTraditional {
                     @ApiResponse(
                             responseCode = "200",
                             description = "Successful updated",
-                            content = @Content(schema = @Schema(implementation = FlowerDTOReturn.class),
+                            content = @Content(schema = @Schema(implementation = FlowerDtoReturn.class),
                                     mediaType = MediaType.APPLICATION_JSON_VALUE)
 
                     ),
